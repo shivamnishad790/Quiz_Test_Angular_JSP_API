@@ -1,0 +1,3 @@
+com\mycompany\quizapi\DatabaseConnection.class
+com\mycompany\quizapi\resources\JavaEE8Resource.class
+com\mycompany\quizapi\JAXRSConfiguration.class
