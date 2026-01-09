@@ -1,0 +1,91 @@
+<!-- 🔄 LOADING -->
+<div *ngIf="loading" class="loading-box">
+  <div class="spinner-border text-primary"></div>
+  <p>Preparing your result...</p>
+</div>
+
+<!-- ✅ RESULT -->
+<div
+  class="container result-wrapper"
+  *ngIf="!loading && data?.status === 'Success'"
+>
+
+  <!-- HEADER -->
+  <div class="result-header animate-fade">
+    <h2>
+      <i class="bi bi-award-fill icon-yellow"></i>
+      DigiCoders Assessment Result
+    </h2>
+    <p>
+      <span class="candidate-name">{{ data.name }}</span>
+      <span class="divider">|</span>
+      Quiz Code:
+      <b>{{ data.quizcode }}</b>
+    </p>
+  </div>
+
+  <!-- CARD -->
+  <div class="card result-card animate-slide">
+    <div class="card-body">
+
+      <div class="row g-4">
+
+        <div class="col-md-6">
+          <div class="stat-box blue">
+            <i class="bi bi-list-task icon-white"></i>
+            <div>
+              <span>Total Questions</span>
+              <b>{{ data.total }}</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="stat-box purple">
+            <i class="bi bi-pencil-square icon-white"></i>
+            <div>
+              <span>Attempted</span>
+              <b>{{ data.attempt }}</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="stat-box green">
+            <i class="bi bi-check-circle-fill icon-white"></i>
+            <div>
+              <span>Correct</span>
+              <b>{{ data.correct }}</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="stat-box red">
+            <i class="bi bi-x-circle-fill icon-white"></i>
+            <div>
+              <span>Incorrect</span>
+              <b>{{ data.wrong }}</b>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SCORE -->
+      <div class="score-box animate-pop">
+        <span>Final Score</span>
+        <h3>{{ data.correct }} / {{ data.total }}</h3>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-box">
+        <button class="btn btn-download" (click)="goToCertificate()">
+          <i class="bi bi-download"></i>
+          Download Certificate
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

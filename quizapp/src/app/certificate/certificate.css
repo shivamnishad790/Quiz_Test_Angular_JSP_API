@@ -1,0 +1,52 @@
+/* FULL CERTIFICATE CANVAS */
+.certificate-template {
+  position: relative;
+  width: 800px;
+  height: 600px;
+
+  background-image: url('../../assets/ct-3.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  margin: auto;
+}
+
+/* COMMON TEXT */
+.overlay {
+  position: absolute;
+ color: rgb(rgb(244, 227, 227), rgb(68, 0, 128), blue);
+  font-family: "Times New Roman", serif;
+  letter-spacing: 1px;
+}
+
+/* DATE */
+.date {
+  top: 72.5px;
+  left: 160px;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+/* CERTIFICATE ID */
+.cert-id {
+  top: 72.5px;
+  right: 177px;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+/* USER NAME – MAIN FIX */
+.username {
+  top: 307px;
+  /* Adjusted to sit below "AWARDED TO" */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-weight: bold;
+  color: rgb(rgb(255, 27, 27), rgb(68, 0, 128), blue);
+  /* Gold-ish color to match the design */
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+}

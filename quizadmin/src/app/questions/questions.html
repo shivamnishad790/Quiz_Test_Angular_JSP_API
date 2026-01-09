@@ -1,0 +1,112 @@
+<div class="container-fluid admin-wrapper">
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="topbar">
+    <h5 class="m-0">Quiz App Admin</h5>
+  </div>
+
+  <div class="row g-0">
+
+    <!-- ===== SIDEBAR ===== -->
+    <div class="col-sm-2 sidebar">
+      <ul class="nav flex-column">
+        <li>
+          <a routerLink="/dashboard" class="nav-link">
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a routerLink="/quiz" class="nav-link active">
+            Quiz
+          </a>
+        </li>
+        <li>
+          <a routerLink="/attempts" class="nav-link">
+            Attempts
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="col-sm-10 content">
+
+      <!-- PAGE HEADER -->
+      <div class="page-header">
+        <div>
+          <h3>Questions Management</h3>
+          <small>Quiz ID: <b>{{ quizid }}</b></small>
+        </div>
+
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          (click)="isEditMode=false; editId=null; resetForm()">
+          + Add Question
+        </button>
+      </div>
+
+      <!-- ===== TABLE ===== -->
+      <div class="card table-card">
+        <div class="card-body p-0">
+
+          <table class="table table-bordered mb-0">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Question</th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>Correct</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of allquiz; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item.question }}</td>
+                <td>{{ item.ans1 }}</td>
+                <td>{{ item.ans2 }}</td>
+                <td>{{ item.ans3 }}</td>
+                <td>{{ item.ans4 }}</td>
+                <td>
+                  <span class="badge bg-success">
+                    {{ item.correctans }}
+                  </span>
+                </td>
+                <td>
+                  <button
+                    class="btn btn-sm btn-warning me-1"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    (click)="editQuestion(item)">
+                    Edit
+                  </button>
+
+                  <button
+                    class="btn btn-sm btn-danger"
+                    (click)="deleteQuestion(item.id)">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+
+              <tr *ngIf="allquiz.length === 0">
+                <td colspan="8" class="text-center text-muted p-3">
+                  No questions found
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,220 @@
+/* BASE */
+.admin-wrapper {
+  min-height: 100vh;
+  background: #f4f6f9;
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+
+/* TOPBAR */
+.topbar {
+  height: 56px;
+  background: linear-gradient(90deg, #4f46e5, #6366f1) !important;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  font-weight: 600;
+}
+
+.brand {
+  font-size: 16px;
+  letter-spacing: 0.3px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #ffffff;
+  min-height: calc(100vh - 56px);
+  border-right: 1px solid #e5e7eb;
+  padding: 16px 10px;
+  box-shadow: 0 8px 24px rgba(79,70,229,0.35);
+}
+
+.menu {
+  display: block;
+  padding: 12px 16px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  color: #111827;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.menu:hover {
+  background: #f1f5f9;
+}
+
+.menu.active {
+   background: linear-gradient(90deg, #4f46e5, #6366f1) !important;
+  color: #fff;
+}
+
+/* CONTENT */
+.content {
+  padding: 28px;
+}
+
+/* PAGE HEADER */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.subtext {
+  font-size: 13px;
+  color: #6b7280;
+}
+/* ===============================
+   PROFESSIONAL DATA GRID (FINAL)
+   =============================== */
+/* ===============================
+   MATERIAL STYLE DATA TABLE
+   =============================== */
+
+/* container */
+.table-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.12),
+    0 1px 2px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border: none;
+}
+
+/* table */
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px; /* row gap = material feel */
+  font-size: 14px;
+  color: #1f2937;
+}
+
+/* header */
+.admin-table thead tr {
+  background: transparent;
+}
+
+.admin-table th {
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #6b7280;
+  border: none;
+}
+
+/* body rows = cards */
+.admin-table tbody tr {
+  background: #ffffff;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.12);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+/* hover = lift (material) */
+.admin-table tbody tr:hover {
+  box-shadow:
+    0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+
+/* cells */
+.admin-table td {
+  padding: 14px 16px;
+  border: none;
+  vertical-align: middle;
+}
+
+/* first & last cell rounding */
+.admin-table tbody tr td:first-child {
+  border-radius: 10px 0 0 10px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.admin-table tbody tr td:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+/* description text */
+.admin-table td.text-muted {
+  color: #6b7280;
+}
+
+/* quiz code chip */
+.code {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* actions */
+.actions {
+  white-space: nowrap;
+}
+
+/* table buttons */
+.admin-table .btn {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 20px; /* material pills */
+  box-shadow: none;
+}
+
+/* outline buttons soft */
+.admin-table .btn-outline-primary {
+  border-color: #c7d2fe;
+  color: #3730a3;
+}
+
+.admin-table .btn-outline-warning {
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+.admin-table .btn-outline-danger {
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+/* button hover */
+.admin-table .btn:hover {
+  background: rgba(0,0,0,0.04);
+}
+/* LOGOUT BUTTON */
+.logout-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* align brand + logout */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

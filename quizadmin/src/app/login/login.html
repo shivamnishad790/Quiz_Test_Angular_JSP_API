@@ -1,0 +1,42 @@
+<div class="login-container">
+  <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+    <div class="login-card">
+
+      <!-- Header -->
+      <div class="login-header text-center mb-4">
+        <h1 class="mb-2">Quiz Admin</h1>
+        <p class="text-muted">Sign in to your account</p>
+      </div>
+
+      <!-- Login Form -->
+      <form class="login-form" (ngSubmit)="onLogin()">
+
+        <!-- Error Message -->
+        <p *ngIf="errorMessage" class="text-danger text-center mb-3">
+          {{ errorMessage }}
+        </p>
+
+        <!-- Username -->
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Enter username" />
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="password" name="password"
+            placeholder="Enter password" />
+        </div>
+
+        <button class="btn btn-primary w-100" [disabled]="loading">
+          {{ loading ? 'Please wait...' : 'Sign In' }}
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+  <div class="login-background"></div>
+</div>

@@ -1,0 +1,112 @@
+/* PAGE */
+body {
+  background: linear-gradient(135deg, #e0e7ff, #fdf2f8);
+}
+
+/* WRAPPER */
+.result-wrapper {
+  max-width: 900px;
+  margin-top: 40px;
+}
+
+/* HEADER */
+.result-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.result-header h2 {
+  font-weight: 800;
+  color: #1e3a8a !important;
+}
+
+.result-header p {
+  font-weight: 600;
+  color: #475569 !important;
+}
+
+.candidate-name {
+  color: #7c3aed !important;
+}
+
+.divider {
+  margin: 0 10px;
+  color: #94a3b8;
+}
+
+/* CARD */
+.result-card {
+  border-radius: 20px;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* STAT BOX */
+.stat-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  border-radius: 16px;
+  color: #ffffff !important;
+  transition: 0.3s;
+}
+
+.stat-box:hover {
+  transform: scale(1.04);
+}
+
+.stat-box i {
+  font-size: 28px;
+}
+
+/* COLORS */
+.blue {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+.purple {
+  background: linear-gradient(135deg, #a855f7, #6d28d9);
+}
+.green {
+  background: linear-gradient(135deg, #22c55e, #15803d);
+}
+.red {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+}
+
+/* ICON COLORS */
+.icon-white {
+  color: #ffffff !important;
+}
+.icon-yellow {
+  color: #facc15 !important;
+}
+
+/* SCORE */
+.score-box {
+  text-align: center;
+  margin: 35px auto;
+  padding: 30px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fde68a, #facc15);
+}
+
+.score-box h3 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #92400e !important;
+}
+
+/* BUTTON */
+.btn-download {
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-weight: 700;
+  border: none;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #06b6d4, #2563eb) !important;
+  box-shadow: 0 15px 35px rgba(37,99,235,0.4);
+}

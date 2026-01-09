@@ -1,0 +1,26 @@
+<!-- CERTIFICATE -->
+<div id="certificate" *ngIf="data" class="certificate-template">
+
+  <!-- DATE -->
+  <div class="overlay date">
+    {{ today }}
+  </div>
+
+  <!-- CERTIFICATE ID -->
+  <div class="overlay cert-id">
+    {{ certificateId }}
+  </div>
+
+  <!-- USER NAME -->
+  <div class="overlay username" *ngIf="data?.name">
+    {{ data.name }}
+  </div>
+
+</div>
+
+<!-- DOWNLOAD -->
+<div class="text-center mt-4" *ngIf="data">
+  <button class="btn btn-danger px-4" (click)="downloadPDF()">
+    ⬇ Download Certificate
+  </button>
+</div>

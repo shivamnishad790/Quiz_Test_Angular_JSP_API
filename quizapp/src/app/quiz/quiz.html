@@ -1,0 +1,91 @@
+<div *ngIf="loading" class="text-center mt-5">
+  <h3>Loading Quiz...</h3>
+</div>
+
+<div
+  class="container py-4 quiz-secure"
+  *ngIf="!loading"
+  oncopy="return false"
+  onpaste="return false"
+  oncut="return false"
+  oncontextmenu="return false"
+>
+
+  <!-- HEADER -->
+  <div class="row align-items-center mb-4">
+    <div class="col-sm-8 d-flex align-items-center">
+      <h3 class="ms-3 fw-bold text-primary">
+        Genius Coaching Center – Quiz
+      </h3>
+    </div>
+    <div class="col-sm-4 text-end">
+      <span class="timer-badge">⏲ {{ currenttime }}</span>
+    </div>
+  </div>
+
+  <!-- CARD -->
+  <div class="card quiz-card shadow-lg">
+    <div class="card-body">
+
+      <div class="question-count">
+        Question {{ currentQuestion + 1 }} / {{ availablequestions }}
+      </div>
+
+      <!-- QUESTION TEXT -->
+      <div class="question-text">
+        {{
+          questiondata[currentQuestion]?.questions
+          || questiondata[currentQuestion]?.question
+          || questiondata[currentQuestion]?.ques
+        }}
+      </div>
+
+      <!-- OPTIONS -->
+      <label
+        *ngFor="let opt of ['A','B','C','D']; let i=index"
+        class="option-box"
+      >
+        <input
+          type="radio"
+          name="ans{{currentQuestion}}"
+          [value]="opt"
+          [(ngModel)]="selectedAnswers[currentQuestion]"
+        />
+        <span>
+          {{ opt }}) {{ questiondata[currentQuestion]?.['ans'+(i+1)] }}
+        </span>
+      </label>
+
+      <!-- ACTIONS -->
+      <div class="mt-4 text-center">
+        <button
+          class="btn btn-outline-secondary me-2"
+          (click)="prevQuestion()"
+          [disabled]="currentQuestion === 0"
+        >
+          ⬅ Prev
+        </button>
+
+       <button
+  class="btn btn-primary me-2"
+  *ngIf="currentQuestion < availablequestions - 1"
+  (click)="nextQuestion()"
+  [disabled]="!selectedAnswers[currentQuestion]"
+>
+  Next ➡
+</button>
+
+<button
+  class="btn btn-danger"
+  *ngIf="currentQuestion === availablequestions - 1"
+  (click)="submitQuiz()"
+  [disabled]="!selectedAnswers[currentQuestion]"
+>
+  Submit Quiz
+</button>
+
+      </div>
+
+    </div>
+  </div>
+</div>

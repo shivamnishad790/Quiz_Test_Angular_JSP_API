@@ -1,0 +1,134 @@
+<div class="container-fluid admin-wrapper">
+
+  <!-- TOP BAR -->
+ <div class="row">
+  <div class="col-sm-12 topbar">
+    <span class="brand">Quiz App Admin</span>
+
+    <div class="right-nav">
+      <span class="admin-text">👋 Welcome, Admin</span>
+        <button class="btn btn-outline-light btn-sm ms-3" (click)="logout()">
+            Logout
+        </button>
+  </div>
+</div>
+
+
+  <div class="row g-0">
+
+    <!-- SIDEBAR -->
+    <div class="col-sm-2 sidebar">
+      <ul class="nav flex-column">
+        <li><a routerLink="/dashboard" class="menu active">Dashboard</a></li>
+        <li><a routerLink="/quiz" class="menu">Quiz</a></li>
+        <li><a routerLink="/attempts" class="menu">Attempts</a></li>
+        <li></li>
+      </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="col-sm-10 content">
+
+      <!-- PAGE HEADER -->
+      <div class="page-header">
+        <div>
+          <h2>Quiz Management</h2>
+          <span class="subtext">Create, update and manage quizzes</span>
+        </div>
+
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
+          + Add Quiz
+        </button>
+      </div>
+
+      <!-- TABLE CARD -->
+      <div class="table-card">
+        <table class="table admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Quiz Name</th>
+              <th>Description</th>
+              <th>Code</th>
+              <th>Time</th>
+              <th>Questions</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for(item of allquiz; track item){
+            <tr>
+              <td>{{ item.id }}</td>
+              <td class="fw-semibold">{{ item.quizname }}</td>
+              <td class="text-muted">{{ item.quizdesc }}</td>
+              <td><span class="code">{{ item.quizcode }}</span></td>
+              <td>{{ item.quiztime }} min</td>
+              <td>{{ item.totalquestions }}</td>
+              <td class="actions">
+                <button class="btn btn-outline-primary btn-sm"
+                  (click)="addquestion(item.id)">Questions</button>
+
+                <button class="btn btn-outline-warning btn-sm"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  (click)="editQuiz(item)">Edit</button>
+
+                <button class="btn btn-outline-danger btn-sm"
+                  (click)="deletequiz(item.id)">Delete</button>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODAL (LOGIC SAME) -->
+<div class="modal fade" id="exampleModal" tabindex="-1">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Quiz Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <form (ngSubmit)="isEditMode ? updatequiz() : addquiz()">
+
+          <label class="form-label">Quiz Name</label>
+          <input class="form-control" [(ngModel)]="quizname" name="quizname" />
+
+          <label class="form-label mt-2">Description</label>
+          <textarea class="form-control"
+            [(ngModel)]="quizdesc" name="quizdesc"></textarea>
+
+          <label class="form-label mt-2">Quiz Code</label>
+          <input class="form-control"
+            [(ngModel)]="quizcode" name="quizcode" />
+
+          <label class="form-label mt-2">Time (minutes)</label>
+          <input type="number" class="form-control"
+            [(ngModel)]="quiztime" name="quiztime" />
+
+          <label class="form-label mt-2">Total Questions</label>
+          <input type="number" class="form-control"
+            [(ngModel)]="totalquestions" name="totalquestions" />
+
+          <div class="text-end mt-3">
+            <button class="btn btn-primary px-4">Save</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

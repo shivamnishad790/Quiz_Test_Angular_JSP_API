@@ -1,0 +1,61 @@
+/* 🔒 Anti text select */
+.quiz-secure {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+/* Header timer */
+.timer-badge {
+  background: #ffecec;
+  color: #d63031;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+/* Card */
+.quiz-card {
+  border-radius: 16px;
+}
+
+/* Question */
+.question-count {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.question-text {
+  background: #f8f9ff;
+  border-left: 5px solid #4c6ef5;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.5;
+}
+
+/* Options */
+.option-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #d1d5db;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.option-box:hover {
+  background: #eef3ff;
+  border-color: #4c6ef5;
+}
+
+.option-box input {
+  transform: scale(1.1);
+}

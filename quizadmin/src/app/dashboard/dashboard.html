@@ -1,0 +1,118 @@
+<div class="container-fluid dashboard-wrapper">
+
+  <!-- ===== TOP NAVBAR ===== -->
+  <nav class="top-navbar">
+    <div class="brand">
+      <span class="logo-circle">Q</span>
+      Quiz App Admin Panel
+    </div>
+
+    <div class="right-nav">
+      <span class="admin-text">👋 Welcome, Admin</span>
+      <i class="fa fa-bell notification-icon"></i>
+      <button class="btn btn-outline-light btn-sm ms-3" (click)="logout()">
+            Logout
+        </button>
+      
+    </div>
+  </nav>
+
+  <div class="row g-0">
+
+    <!-- ===== SIDEBAR ===== -->
+    <div class="col-lg-2 col-md-3 sidebar">
+      <ul class="nav flex-column">
+        <li>
+          <a routerLink="/dashboard" class="nav-link active">
+            <i class="fa fa-chart-line"></i>
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/quiz" class="nav-link">
+            <i class="fa fa-question-circle"></i>
+            Quiz
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/attempts" class="nav-link">
+            <i class="fa fa-users"></i>
+            Attempts
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="col-lg-10 col-md-9 main-content">
+
+      <div class="page-header">
+        <h2>Dashboard Overview</h2>
+        <p>System performance summary</p>
+      </div>
+
+      <!-- ===== STAT CARDS ===== -->
+      <div class="row g-4">
+
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card card-1">
+            <i class="fa fa-list"></i>
+            <div>
+              <p>Total Quiz</p>
+              <h4>{{ stats.totalQuiz }}</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card card-2">
+            <i class="fa fa-check-circle"></i>
+            <div>
+              <p>Active Quiz</p>
+              <h4>{{ stats.activeQuiz }}</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card card-3">
+            <i class="fa fa-pen"></i>
+            <div>
+              <p>Total Attempts</p>
+              <h4>{{ stats.totalAttempts }}</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card card-4">
+            <i class="fa fa-user-graduate"></i>
+            <div>
+              <p>Total Students</p>
+              <h4>{{ stats.totalStudents }}</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== ANALYTICS ===== -->
+      <div class="analytics-card mt-5">
+        <h5>Quiz Analytics</h5>
+
+        <div class="fake-chart">
+          <div class="bar b1"></div>
+          <div class="bar b2"></div>
+          <div class="bar b3"></div>
+          <div class="bar b4"></div>
+          <div class="bar b5"></div>
+        </div>
+
+        <p class="chart-note">Analytics overview (UI demo)</p>
+      </div>
+
+    </div>
+  </div>
+</div>

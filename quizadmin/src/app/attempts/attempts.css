@@ -1,0 +1,175 @@
+/* ===== BASE ===== */
+.admin-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f9fbff, #f2f5fb);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== TOP BAR ===== */
+.text-bg-dark {
+  height: 64px;
+  background: linear-gradient(90deg, #4f46e5, #6366f1) !important;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(79,70,229,0.35);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  background: #ffffff;
+  min-height: calc(100vh - 64px);
+  padding-top: 28px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.sidebar .nav-link {
+  padding: 14px 22px;
+  margin: 8px 14px;
+  border-radius: 14px;
+  color: #111827;
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+.sidebar .nav-link:hover {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.sidebar .nav-link.active {
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  color: #fff;
+}
+
+/* ===== MAIN ===== */
+.content {
+  padding: 40px;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ===== SEARCH ===== */
+.search-box {
+  display: flex;
+  gap: 10px;
+  max-width: 420px;
+  margin-bottom: 20px;
+}
+
+/* ================= TABLE CARD ================= */
+.table-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* ================= TABLE ================= */
+.table {
+  margin: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* header */
+.table thead {
+  background: #eef2ff;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.table th {
+  padding: 14px;
+  font-weight: 600;
+  color: #3730a3;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* ================= SCROLL BODY ================= */
+.table tbody {
+  display: block;
+  max-height: 420px;      /* ~10 rows */
+  overflow-y: auto;
+}
+
+.table thead,
+.table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* cells */
+.table td {
+  padding: 14px;
+  font-size: 14px;
+  vertical-align: top;
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* ================= COLUMN WIDTH FIX ================= */
+.table th:nth-child(1),
+.table td:nth-child(1) { width: 60px; }
+
+.table th:nth-child(2),
+.table td:nth-child(2) { width: 150px; }
+
+.table th:nth-child(3),
+.table td:nth-child(3) { width: 130px; }
+
+.table th:nth-child(4),
+.table td:nth-child(4) { width: 220px; } /* Email */
+
+.table th:nth-child(5),
+.table td:nth-child(5) { width: 180px; } /* College */
+
+.table th:nth-child(6),
+.table td:nth-child(6) { width: 120px; }
+
+.table th:nth-child(7),
+.table td:nth-child(7) { width: 90px; }
+
+/* ================= EMAIL & COLLEGE ================= */
+.table td:nth-child(4),
+.table td:nth-child(5) {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #374151;
+}
+
+/* ================= ROW EFFECT ================= */
+.table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background: #f5f7ff;
+}
+
+/* ================= MARKS ================= */
+kbd {
+  background: #111827;
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* ================= SCROLLBAR ================= */
+.table tbody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.table tbody::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 10px;
+}
